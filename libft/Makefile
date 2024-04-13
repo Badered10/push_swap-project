@@ -6,7 +6,7 @@
 #    By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 17:33:58 by baouragh          #+#    #+#              #
-#    Updated: 2024/03/25 17:07:31 by baouragh         ###   ########.fr        #
+#    Updated: 2024/04/13 15:02:56 by baouragh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
 	
+bonus: $(BONUS)
 $(BONUS): $(SRC_B)
 	@$(CC) $(CFLAGS) -c $(SRC_B)
 	@ar -rcs $(NAME) $(BONUS)
 	
-bonus: $(BONUS)
 
 clean:
 	@rm -f $(OBJS) $(BONUS)
@@ -47,5 +47,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all re clean fclean bonus
-.SECONDARY: $(OBJS) $(BONUS)
+.PHONY: re clean bonus

@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 01:04:47 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/12 15:22:20 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/13 17:53:30 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@
 #include <string.h>
 #include <unistd.h>
 
-long	ft_atol(const char *str)
+ssize_t	ft_atol(char *var)
 {
-	char	*var;
-	long	res;
-	int		signe;
+	ssize_t	res;
+	ssize_t	signe;
 
-	var = (char *)str;
 	res = 0;
 	signe = 1;
 	while ((*var >= 9 && *var <= 13) || *var == 32)
@@ -39,6 +37,8 @@ long	ft_atol(const char *str)
 	while (*var && *var >= '0' && *var <= '9')
 	{
 		res = res * 10 + (*var - '0');
+		if (res * signe > 2147483647 || res * signe < -2147483648)
+			return (2147483648);
 		var++;
 	}
 	res *= signe;
@@ -90,7 +90,7 @@ t_list	*get_number(char *argv, t_list **list)
 	if (!x)
 		return (NULL);
 	*x = ft_atol(argv);
-	if (*x > 2147483647 || *x < -2147483648 || !check_duplicate(*list, *x))
+	if (*x == 2147483648 || !check_duplicate(*list, *x))
 		return (free(x), NULL);
 	node = ft_lstnew(x);
 	if (!node)
@@ -98,13 +98,22 @@ t_list	*get_number(char *argv, t_list **list)
 	return (node);
 }
 
-bool	check_whole(char *argv)
+bool	check_whole(char **argv)
 {
-	while (*argv)
+	int i;
+	int j;
+
+	i = 1;
+	while (argv[i])
 	{
-		if (!ft_isdigit(*argv) && *argv != ' ' && *argv != '+' && *argv != '-')
-			return (0);
-		argv++;
+		j = 0;
+		while(argv[i][j])
+		{
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
+				return (0);
+			j++;
+		}
+		i++;
 	}
 	return (1);
 }
@@ -136,12 +145,12 @@ void	check_args(char **argv, t_list **list)
 	int		i;
 	bool	check;
 
+	check = check_whole(argv);
+	if (!check)
+		return ((void)ft_putstr_fd("Error whole\n", 2));
 	i = 1;
 	while (argv[i])
 	{
-		check = check_whole(argv[i]);
-		if (!check)
-			return (ft_putstr_fd("Error\n", 2), ft_lstclear(list, del));
 		split_and_check(i, argv, list);
 		i++;
 	}
@@ -149,19 +158,33 @@ void	check_args(char **argv, t_list **list)
 
 int	main(int argc, char **argv)
 {
-	t_list	*list;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	t_list	*save;
 
 	if (argc == 1)
 		return (1);
-	check_args(argv, &list);
-	save = list;
-	while (list)
+	check_args(argv, &stack_b);
+	save = stack_b;
+	push_a(&stack_a,&stack_b,1);
+	push_a(&stack_a,&stack_b,1);
+	push_a(&stack_a,&stack_b,1);
+	// push_b(&stack_b,&stack_a,1);
+	// swap_a(&stack_a,1);
+	// swap_b(&stack_b,1);
+	rotate_rotate(&stack_a, &stack_b,1);
+	while (stack_a)
 	{
-		ft_printf("From --> '%p' and ", list);
-		ft_printf("value --> '%d'\n", *(int *)list->content);
-		list = list->next;
+		ft_printf("stack_a From --> '%p' and ", stack_a);
+		ft_printf("value --> '%d'\n", *(int *)stack_a->content);
+		stack_a = stack_a->next;
+	}
+	while (stack_b)
+	{
+		ft_printf("stack_b From --> '%p' and ", stack_b);
+		ft_printf("value --> '%d'\n", *(int *)stack_b->content);
+		stack_b = stack_b->next;
 	}
 	ft_lstclear(&save, del);
-	system("leaks push_swap");
+	// system("leaks push_swap");
 }
