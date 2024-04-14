@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:49:55 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/12 14:52:07 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/14 11:20:18 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
+	t_list *last;
 
 	if (!lst || !new)
 		return ;
@@ -24,8 +24,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	last = ft_lstlast(*lst);
-	if (new != last)
-		last->next = new;
-	else
-		last->next = NULL;
+	last->next = new;
+	if (new == *lst)
+	{
+		last = new->next;
+		new->next = NULL;
+		*lst = last;
+	}
 }

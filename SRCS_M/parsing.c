@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 01:04:47 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/13 17:53:30 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/14 12:32:52 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,24 +164,32 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (1);
-	check_args(argv, &stack_b);
-	save = stack_b;
-	push_a(&stack_a,&stack_b,1);
-	push_a(&stack_a,&stack_b,1);
-	push_a(&stack_a,&stack_b,1);
-	// push_b(&stack_b,&stack_a,1);
+	check_args(argv, &stack_a);
+	save = stack_a;
+	stack_b = NULL;
+	
 	// swap_a(&stack_a,1);
+	// swap_a(&stack_a,1);
+	push_b(&stack_b,&stack_a,1);
+	push_b(&stack_b,&stack_a,1);
+	push_b(&stack_b,&stack_a,1);
 	// swap_b(&stack_b,1);
-	rotate_rotate(&stack_a, &stack_b,1);
+	// swap_a(&stack_a,1);
+	swap_swap(&stack_a, &stack_b, 1);
+	// push_b(&stack_b,&stack_a,1);
+	// rotate_rotate(&stack_a, &stack_b,1);
+	// rotate_a(&stack_a,1);
+	// rotate_a(&stack_a,1);
+	// rotate_a(&stack_a,1);
 	while (stack_a)
 	{
-		ft_printf("stack_a From --> '%p' and ", stack_a);
+		ft_printf("a From --> '%p' and ", stack_a);
 		ft_printf("value --> '%d'\n", *(int *)stack_a->content);
 		stack_a = stack_a->next;
 	}
 	while (stack_b)
 	{
-		ft_printf("stack_b From --> '%p' and ", stack_b);
+		ft_printf("b From --> '%p' and ", stack_b);
 		ft_printf("value --> '%d'\n", *(int *)stack_b->content);
 		stack_b = stack_b->next;
 	}

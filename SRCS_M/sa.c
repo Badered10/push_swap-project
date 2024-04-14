@@ -6,23 +6,27 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 23:37:13 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/13 17:32:29 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/14 12:14:04 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
+
 void	swap_a(t_list **stack_a, bool id)
 {
-	t_list	*next_node;
+	t_list *second_node;
+	t_list *second_next;
 
-	if (id)
-		write(1,"sa\n",sizeof("sa\n"));
 	if (!stack_a || !(*stack_a) || !(*stack_a)->next)
 		return ;
-	next_node = (*stack_a);
-	next_node = next_node->next;
-	swap((*stack_a)->content, next_node->content);
+	second_node = (*stack_a)->next;
+	second_next = second_node->next;
+	(*stack_a)->next = second_next;
+	second_node->next = *(stack_a);
+	*stack_a = second_node;
+	if (id)
+		write(1,"sa\n",sizeof("sa\n"));
 }
 /*
 		int main()

@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 17:12:58 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/13 17:42:55 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/14 11:54:03 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ void rotate_a(t_list **stack_a, bool id)
 {
     t_list *tmp;
 
-    if (id)
-        write(1,"ra\n",sizeof("ra\n"));
     if (!stack_a || !*stack_a || !(*stack_a)->next)
         return;
-    tmp = ft_lstlast(*stack_a);
-    tmp->next = *stack_a;
     tmp = (*stack_a)->next;
-    (*stack_a)->next = NULL;
-    (*stack_a) = tmp;
+    ft_lstadd_back(stack_a, *stack_a);
+    *stack_a = tmp;
+    if (id)
+        write(1,"ra\n",sizeof("ra\n"));
 }
