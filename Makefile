@@ -6,7 +6,7 @@
 #    By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 23:05:56 by baouragh          #+#    #+#              #
-#    Updated: 2024/04/13 19:23:15 by baouragh         ###   ########.fr        #
+#    Updated: 2024/04/14 13:25:27 by baouragh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ MAKE = make -C
 MAKE = make -C
 LIBS = ft_printf/libftprintf.a
 
-SRSC_M = SRCS_M/quick_sort.c SRCS_M/sa.c SRCS_M/sb.c SRCS_M/ss.c SRCS_M/parsing.c SRCS_M/pa.c SRCS_M/pb.c SRCS_M/ra.c SRCS_M/rb.c SRCS_M/rr.c 
+SRSC_M = SRCS_M/quick_sort.c SRCS_M/sa.c SRCS_M/sb.c SRCS_M/ss.c SRCS_M/parsing.c SRCS_M/pa.c SRCS_M/pb.c SRCS_M/ra.c SRCS_M/rb.c SRCS_M/rr.c SRCS_M/rra.c 
 #SRCS_M/main.c
 SRCS_B = SRCS_B/quick_sort.c
 

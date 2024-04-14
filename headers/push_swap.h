@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:40:25 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/14 12:31:29 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/14 13:25:10 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ void	swap_swap(t_list **stack_a, t_list **stack_b, bool id);
 void    rotate_a(t_list **stack_a, bool id);
 void    rotate_b(t_list **stack_b, bool id);
 void    rotate_rotate(t_list **stack_a, t_list **stack_b, bool id);
+void    reverse_rotate_a(t_list **stack_a, bool id);
+
 #endif

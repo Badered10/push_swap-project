@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 01:04:47 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/14 12:32:52 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/14 13:28:25 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,17 +170,19 @@ int	main(int argc, char **argv)
 	
 	// swap_a(&stack_a,1);
 	// swap_a(&stack_a,1);
-	push_b(&stack_b,&stack_a,1);
-	push_b(&stack_b,&stack_a,1);
-	push_b(&stack_b,&stack_a,1);
+	// push_b(&stack_b,&stack_a,1);
+	// push_b(&stack_b,&stack_a,1);
+	// push_b(&stack_b,&stack_a,1);
 	// swap_b(&stack_b,1);
 	// swap_a(&stack_a,1);
-	swap_swap(&stack_a, &stack_b, 1);
+	// swap_swap(&stack_a, &stack_b, 1);
 	// push_b(&stack_b,&stack_a,1);
 	// rotate_rotate(&stack_a, &stack_b,1);
 	// rotate_a(&stack_a,1);
 	// rotate_a(&stack_a,1);
 	// rotate_a(&stack_a,1);
+	reverse_rotate_a(&stack_a, 1);
+	reverse_rotate_a(&stack_a, 1);
 	while (stack_a)
 	{
 		ft_printf("a From --> '%p' and ", stack_a);
