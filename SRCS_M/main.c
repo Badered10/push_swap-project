@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 21:06:14 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/15 21:10:18 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,8 @@ void	short_algo(t_list **stack_a, t_list **stack_b)
 }
 bool	is_sorted(t_list *stack_a)
 {
+	if (!stack_a->next)
+		return (1);
 	while (stack_a)
 	{
 		if (stack_a->next && stack_a->rank > stack_a->next->rank)
@@ -133,7 +135,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc <= 2)
+	if (argc == 1)
 		return (1);
 	i = 0;
 	check_args(argv, &stack_a);
