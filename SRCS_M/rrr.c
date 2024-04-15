@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 11:49:55 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 18:01:09 by baouragh         ###   ########.fr       */
+/*   Created: 2024/04/14 14:42:33 by baouragh          #+#    #+#             */
+/*   Updated: 2024/04/15 17:01:09 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../headers/push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+/*
+   rra and rrb at the same time.
+*/
+void	reverse_rr(t_list **stack_a, t_list **stack_b, bool id)
 {
-	t_list	*last;
-
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	last = ft_lstlast(*lst);
-	last->next = new;
-	if (new == *lst)
-	{
-		last = new->next;
-		new->next = NULL;
-		*lst = last;
-	}
+	reverse_rotate_a(stack_a, 0);
+	reverse_rotate_b(stack_b, 0);
+	if (id)
+		ft_printf("rrr\n");
 }

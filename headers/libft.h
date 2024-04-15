@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:36:57 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/13 15:27:06 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:59:05 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int					ft_puthexa_fd(unsigned int res, int fd, char ch);
 
 typedef struct s_list
 {
+	int				rank;
 	void			*content;
 	struct s_list	*next;
 }					t_list;

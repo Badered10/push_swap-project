@@ -6,21 +6,25 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:56:20 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/14 11:49:00 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:01:21 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void    push_a(t_list **stack_a, t_list **stack_b, bool id)
+/*
+	(push a): Take the first element at the top of b and put it at the top of a.
+	Do nothing if b is empty.
+*/
+void	push_a(t_list **stack_a, t_list **stack_b, bool id)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    if (!stack_b || !*stack_b)
-        return;
-    tmp = (*stack_b)->next;
-    ft_lstadd_front(stack_a, *stack_b);
-    *stack_b = tmp;
-    if (id)
-        write(1,"pa\n",sizeof("pa\n"));
+	if (!stack_b || !*stack_b)
+		return ;
+	tmp = (*stack_b)->next;
+	ft_lstadd_front(stack_a, *stack_b);
+	*stack_b = tmp;
+	if (id)
+		ft_printf("pa\n");
 }

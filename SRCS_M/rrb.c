@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 18:26:20 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 18:04:15 by baouragh         ###   ########.fr       */
+/*   Created: 2024/04/14 14:39:42 by baouragh          #+#    #+#             */
+/*   Updated: 2024/04/15 18:04:30 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
 /*
-	rra (reverse rotate a): Shift down all elements of stack a by 1.
+   (reverse rotate b): Shift down all elements of stack b by 1.
 	The last element becomes the first one.
 */
 static t_list	*before_last(t_list *list)
@@ -32,18 +32,18 @@ static t_list	*before_last(t_list *list)
 	return (tmp);
 }
 
-void	reverse_rotate_a(t_list **stack_a, bool id)
+void	reverse_rotate_b(t_list **stack_b, bool id)
 {
 	t_list	*before;
 	t_list	*last;
 
-	if (!stack_a || !*stack_a || !(*stack_a)->next)
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
-	last = ft_lstlast(*stack_a);
-	before = before_last(*stack_a);
-	last->next = *stack_a;
+	last = ft_lstlast(*stack_b);
+	before = before_last(*stack_b);
+	last->next = *stack_b;
 	before->next = NULL;
-	*stack_a = last;
+	*stack_b = last;
 	if (id)
-		ft_printf("rra\n");
+		ft_printf("rrb\n");
 }

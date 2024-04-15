@@ -6,19 +6,21 @@
 #    By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 23:05:56 by baouragh          #+#    #+#              #
-#    Updated: 2024/04/14 13:25:27 by baouragh         ###   ########.fr        #
+#    Updated: 2024/04/15 18:14:10 by baouragh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
 MAKE = make -C
 MAKE = make -C
 LIBS = ft_printf/libftprintf.a
 
-SRSC_M = SRCS_M/quick_sort.c SRCS_M/sa.c SRCS_M/sb.c SRCS_M/ss.c SRCS_M/parsing.c SRCS_M/pa.c SRCS_M/pb.c SRCS_M/ra.c SRCS_M/rb.c SRCS_M/rr.c SRCS_M/rra.c 
-#SRCS_M/main.c
+SRSC_M = 	SRCS_M/sa.c SRCS_M/sb.c SRCS_M/ss.c\
+			SRCS_M/parsing.c SRCS_M/pa.c SRCS_M/pb.c SRCS_M/ra.c SRCS_M/rb.c\
+			SRCS_M/rr.c SRCS_M/rra.c SRCS_M/rrb.c SRCS_M/rrr.c SRCS_M/main.c\
+			SRCS_M/utils1.c SRCS_M/utils2.c
 SRCS_B = SRCS_B/quick_sort.c
 
 OBJS_M = $(SRSC_M:.c=.o)
