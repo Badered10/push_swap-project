@@ -6,24 +6,22 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 21:10:18 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/15 21:33:13 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-static	int	get_pose(t_list **stack_b, int rank)
+static	int	get_pose(t_list *stack_b, int rank)
 {
-	t_list	*tmp;
 	int		pose;
 
-	tmp = *stack_b;
 	pose = 0;
-	while (tmp)
+	while (stack_b)
 	{
-		if (tmp->rank == rank)
+		if (stack_b->rank == rank)
 			return (pose);
-		tmp = tmp->next;
+		stack_b = stack_b->next;
 		pose++;
 	}
 	return (pose);
@@ -35,8 +33,8 @@ static	void	to_stack_a(t_list **stack_a, t_list **stack_b)
 
 	while (*stack_b)
 	{
-		rank = get_rank(stack_b);
-		put_max_rank(stack_a, stack_b, get_pose(stack_b, rank), rank);
+		rank = get_rank(*stack_b);
+		put_max_rank(stack_a, stack_b, get_pose(*stack_b, rank), rank);
 	}
 }
 

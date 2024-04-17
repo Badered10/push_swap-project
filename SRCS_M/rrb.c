@@ -6,16 +6,12 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:39:42 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 18:04:30 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/15 21:17:47 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-/*
-   (reverse rotate b): Shift down all elements of stack b by 1.
-	The last element becomes the first one.
-*/
 static t_list	*before_last(t_list *list)
 {
 	t_list	*tmp;
@@ -32,6 +28,10 @@ static t_list	*before_last(t_list *list)
 	return (tmp);
 }
 
+/*
+   (reverse rotate b): Shift down all elements of stack b by 1.
+	The last element becomes the first one.
+*/
 void	reverse_rotate_b(t_list **stack_b, bool id)
 {
 	t_list	*before;

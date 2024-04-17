@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:05:57 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 18:10:57 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/15 21:32:16 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,16 @@ void	put_max_rank(t_list **stack_a, t_list **stack_b, int pose, int rank)
 	push_a(stack_a, stack_b, 1);
 }
 
-int	get_rank(t_list **stack_b)
+int	get_rank(t_list *stack_b)
 {
-	t_list	*tmp;
 	int		rank;
 
-	tmp = *stack_b;
-	rank = tmp->rank;
-	while (tmp)
+	rank = stack_b->rank;
+	while (stack_b)
 	{
-		if (tmp->rank > rank)
-			rank = tmp->rank;
-		tmp = tmp->next;
+		if (stack_b->rank > rank)
+			rank = stack_b->rank;
+		stack_b = stack_b->next;
 	}
 	return (rank);
 }

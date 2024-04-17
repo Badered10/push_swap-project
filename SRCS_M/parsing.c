@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 01:04:47 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 18:08:46 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/15 21:35:23 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static	bool	check_whole(char **argv)
 	return (1);
 }
 
-static void	check_rank(t_list *list, t_list *node)
+static void	set_rank(t_list *list, t_list *node)
 {
 	node->rank = 0;
 	if (!list)
@@ -95,7 +95,7 @@ static	void	split_and_check(int j, int i, char **argv, t_list **list)
 		}
 		if (i == 1 && !j)
 			*list = node;
-		check_rank(*list, node);
+		set_rank(*list, node);
 		ft_lstadd_back(list, node);
 		j++;
 	}
