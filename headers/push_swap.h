@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:40:25 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 21:33:29 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:03:28 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ long	ft_atol(char *var, long res, long signe);
 bool	check_duplicate(t_list *list, long number);
 int		set_range(t_list *stack_a);
 void	put_max_rank(t_list **stack_a, t_list **stack_b, int pose, int rank);
-int		get_rank(t_list *stack_b);
+int		get_max_rank(t_list *stack_b);
+int		get_pose(t_list *stack_b, int rank);
+bool	is_sorted(t_list *stack_a);
+bool	check_revers(t_list *stack_a);
+void	push_by_rank(t_list **stack_a, t_list **stack_b, int rank, int size);
+void	sort_three(t_list **stack_a);
 
 #endif

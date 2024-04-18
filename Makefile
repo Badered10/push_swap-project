@@ -6,7 +6,7 @@
 #    By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 23:05:56 by baouragh          #+#    #+#              #
-#    Updated: 2024/04/15 21:17:06 by baouragh         ###   ########.fr        #
+#    Updated: 2024/04/18 18:59:29 by baouragh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBS = ft_printf/libftprintf.a
 SRSC_M = 	SRCS_M/sa.c SRCS_M/sb.c SRCS_M/ss.c\
 			SRCS_M/parsing.c SRCS_M/pa.c SRCS_M/pb.c SRCS_M/ra.c SRCS_M/rb.c\
 			SRCS_M/rr.c SRCS_M/rra.c SRCS_M/rrb.c SRCS_M/rrr.c SRCS_M/main.c\
-			SRCS_M/utils1.c SRCS_M/utils2.c
+			SRCS_M/utils1.c SRCS_M/utils2.c SRCS_M/utils3.c
 SRCS_B = SRCS_B/quick_sort.c
 
 OBJS_M = $(SRSC_M:.c=.o)

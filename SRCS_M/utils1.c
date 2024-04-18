@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utlis1.c                                           :+:      :+:    :+:   */
+/*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:05:48 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 18:07:30 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:55:18 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,19 @@ bool	check_duplicate(t_list *list, long number)
 			return (0);
 	}
 	return (1);
+}
+
+int	get_pose(t_list *stack_b, int rank)
+{
+	int		pose;
+
+	pose = 0;
+	while (stack_b)
+	{
+		if (stack_b->rank == rank)
+			return (pose);
+		stack_b = stack_b->next;
+		pose++;
+	}
+	return (pose);
 }

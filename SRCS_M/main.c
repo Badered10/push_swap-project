@@ -6,47 +6,21 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 21:33:13 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:03:56 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-static	int	get_pose(t_list *stack_b, int rank)
-{
-	int		pose;
-
-	pose = 0;
-	while (stack_b)
-	{
-		if (stack_b->rank == rank)
-			return (pose);
-		stack_b = stack_b->next;
-		pose++;
-	}
-	return (pose);
-}
-
 static	void	to_stack_a(t_list **stack_a, t_list **stack_b)
 {
-	int	rank;
+	int	max_rank;
 
 	while (*stack_b)
 	{
-		rank = get_rank(*stack_b);
-		put_max_rank(stack_a, stack_b, get_pose(*stack_b, rank), rank);
+		max_rank = get_max_rank(*stack_b);
+		put_max_rank(stack_a, stack_b, get_pose(*stack_b, max_rank), max_rank);
 	}
-}
-
-static	bool	check_revers(t_list *stack_a)
-{
-	while (stack_a)
-	{
-		if (stack_a->next && stack_a->rank < stack_a->next->rank)
-			return (0);
-		stack_a = stack_a->next;
-	}
-	return (1);
 }
 
 static	void	to_stack_b(t_list **stack_a, t_list **stack_b, int range, int i)
@@ -76,54 +50,30 @@ static	void	to_stack_b(t_list **stack_a, t_list **stack_b, int range, int i)
 	}
 }
 
-void	sort_three(t_list **stack_a)
+static	void	sort_five(t_list **stack_a, t_list **stack_b)
 {
-	if ((*stack_a)->rank > (*stack_a)->next->rank)
-	{
-		if ((*stack_a)->next->rank > (*stack_a)->next->next->rank)
-		{
-			swap_a(stack_a, 1);
-			reverse_rotate_a(stack_a, 1);
-		}
-		else if((*stack_a)->next->next->rank > (*stack_a)->rank)
-			swap_a(stack_a, 1);
-		else
-			rotate_a(stack_a, 1);
-	}
-	else
-	{
-		if ((*stack_a)->next->next->rank > (*stack_a)->rank)
-		{
-			swap_a(stack_a, 1);
-			rotate_a(stack_a, 1);
-		}
-		else
-			reverse_rotate_a(stack_a, 1);
-	}
+	int	size;
+
+	size = ft_lstsize(*stack_a);
+	push_by_rank(stack_a, stack_b, 0, size);
+	if (size == 5)
+		push_by_rank(stack_a, stack_b, 1, size);
+	sort_three(stack_a);
+	push_a(stack_a, stack_b, 1);
+	if (size == 5)
+		push_a(stack_a, stack_b, 1);
 }
 
-void	short_algo(t_list **stack_a, t_list **stack_b)
+static	void	short_algo(t_list **stack_a, t_list **stack_b)
 {
-	(void) stack_b;
 	if (ft_lstsize(*stack_a) == 2)
 		swap_a(stack_a, 1);
 	else if (ft_lstsize(*stack_a) == 3)
 		sort_three(stack_a);
-	// else
-	// 	sort_five(stack_a, stack_a);
+	else
+		sort_five(stack_a, stack_b);
 }
-bool	is_sorted(t_list *stack_a)
-{
-	if (!stack_a->next)
-		return (1);
-	while (stack_a)
-	{
-		if (stack_a->next && stack_a->rank > stack_a->next->rank)
-			return (0);
-		stack_a = stack_a->next;
-	}
-	return (1);
-}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
