@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:40:25 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/18 19:03:28 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:52:53 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		get_max_rank(t_list *stack_b);
 int		get_pose(t_list *stack_b, int rank);
 bool	is_sorted(t_list *stack_a);
 bool	check_revers(t_list *stack_a);
-void	push_by_rank(t_list **stack_a, t_list **stack_b, int rank, int size);
+void	push_by_rank(t_list **stack_a, t_list **stack_b, int rank);
 void	sort_three(t_list **stack_a);
 
 #endif

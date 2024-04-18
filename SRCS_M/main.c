@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/18 19:03:56 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:52:01 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static	void	sort_five(t_list **stack_a, t_list **stack_b)
 	int	size;
 
 	size = ft_lstsize(*stack_a);
-	push_by_rank(stack_a, stack_b, 0, size);
+	push_by_rank(stack_a, stack_b, 0);
 	if (size == 5)
-		push_by_rank(stack_a, stack_b, 1, size);
+		push_by_rank(stack_a, stack_b, 1);
 	sort_three(stack_a);
 	push_a(stack_a, stack_b, 1);
 	if (size == 5)

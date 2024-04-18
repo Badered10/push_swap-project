@@ -6,16 +6,18 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:58:52 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/18 19:04:38 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:25:40 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	push_by_rank(t_list **stack_a, t_list **stack_b, int rank, int size)
+void	push_by_rank(t_list **stack_a, t_list **stack_b, int rank)
 {
 	int	pose;
+	int	size;
 
+	size = ft_lstsize(*stack_a);
 	pose = get_pose(*stack_a, rank);
 	if (pose <= (size / 2))
 		while ((*stack_a)->rank != rank)
@@ -40,7 +42,8 @@ void	sort_three(t_list **stack_a)
 		else
 			rotate_a(stack_a, 1);
 	}
-	else
+	else if ((*stack_a)->rank < (*stack_a)->next->rank
+		&& (*stack_a)->next->next->rank < (*stack_a)->next->rank)
 	{
 		if ((*stack_a)->next->next->rank > (*stack_a)->rank)
 		{
