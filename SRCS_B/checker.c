@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:30:20 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/19 17:05:18 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:08:32 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ bool	is_opertion(char *str, t_list **stack_a, t_list **stack_b, int len)
 	else if (!ft_strncmp(str, "rrr\n", len))
 		reverse_rr(stack_a, stack_b, 0);
 	else
-		return (write(1, "Error\n", 6), 0);
+		return (write(2, "Error\n", 6), 0);
 	return (1);
 }
 
@@ -53,7 +53,7 @@ void	apply_operations(t_list **stack_a, t_list **stack_b)
 		len = ft_strlen(str);
 		if (len > 4 || len < 3)
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		if (is_opertion(str, stack_a, stack_b, len))
