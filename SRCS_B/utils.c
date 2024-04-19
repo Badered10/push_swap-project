@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:29:17 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/19 16:30:55 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:21:57 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 bool	is_sorted(t_list *stack_a)
 {
+	if(!stack_a)
+		return (0);
 	if (!stack_a->next)
 		return (1);
 	while (stack_a)

@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:05:57 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/18 18:57:27 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:24:13 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	set_range(t_list *stack_a)
 
 void	put_max_rank(t_list **stack_a, t_list **stack_b, int pose, int max_rank)
 {
+	
 	if (pose <= (ft_lstsize(*stack_b) / 2))
 		while ((*stack_b)->rank != max_rank)
 			rotate_b(stack_b, 1);
@@ -40,6 +41,8 @@ void	put_max_rank(t_list **stack_a, t_list **stack_b, int pose, int max_rank)
 
 int	get_max_rank(t_list *stack_b)
 {
+	if(!stack_b)
+		return (0);
 	int		max_rank;
 
 	max_rank = stack_b->rank;
@@ -54,6 +57,8 @@ int	get_max_rank(t_list *stack_b)
 
 bool	is_sorted(t_list *stack_a)
 {
+	if(!stack_a)
+		return (0);
 	if (!stack_a->next)
 		return (1);
 	while (stack_a)
