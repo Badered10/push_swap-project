@@ -12,7 +12,7 @@
 
 #include "../headers/push_swap.h"
 
-static	t_list	*get_number(char *argv, t_list **list)
+static t_list	*get_number(char *argv, t_list **list)
 {
 	t_list	*node;
 	long	*x;
@@ -33,7 +33,7 @@ static	t_list	*get_number(char *argv, t_list **list)
 	return (node);
 }
 
-static	bool	check_whole(char **argv)
+static bool	check_whole(char **argv)
 {
 	int	i;
 	int	j;
@@ -69,7 +69,7 @@ static void	set_rank(t_list *list, t_list *node)
 	}
 }
 
-static	void	split_and_check(int j, int i, char **argv, t_list **list)
+static void	split_and_check(int j, int i, char **argv, t_list **list)
 {
 	t_list	*node;
 	char	**args;

@@ -1,58 +1,34 @@
 {
 	"tldrawFileFormatVersion": 1,
 	"schema": {
-		"schemaVersion": 1,
-		"storeVersion": 4,
-		"recordVersions": {
-			"asset": {
-				"version": 1,
-				"subTypeKey": "type",
-				"subTypeVersions": {
-					"image": 3,
-					"video": 3,
-					"bookmark": 1
-				}
-			},
-			"camera": {
-				"version": 1
-			},
-			"document": {
-				"version": 2
-			},
-			"instance": {
-				"version": 24
-			},
-			"instance_page_state": {
-				"version": 5
-			},
-			"page": {
-				"version": 1
-			},
-			"shape": {
-				"version": 4,
-				"subTypeKey": "type",
-				"subTypeVersions": {
-					"group": 0,
-					"text": 1,
-					"bookmark": 2,
-					"draw": 1,
-					"geo": 8,
-					"note": 5,
-					"line": 4,
-					"frame": 0,
-					"arrow": 3,
-					"highlight": 0,
-					"embed": 4,
-					"image": 3,
-					"video": 2
-				}
-			},
-			"instance_presence": {
-				"version": 5
-			},
-			"pointer": {
-				"version": 1
-			}
+		"schemaVersion": 2,
+		"sequences": {
+			"com.tldraw.store": 4,
+			"com.tldraw.asset": 1,
+			"com.tldraw.camera": 1,
+			"com.tldraw.document": 2,
+			"com.tldraw.instance": 24,
+			"com.tldraw.instance_page_state": 5,
+			"com.tldraw.page": 1,
+			"com.tldraw.instance_presence": 5,
+			"com.tldraw.pointer": 1,
+			"com.tldraw.shape": 4,
+			"com.tldraw.asset.bookmark": 1,
+			"com.tldraw.asset.image": 3,
+			"com.tldraw.asset.video": 3,
+			"com.tldraw.shape.group": 0,
+			"com.tldraw.shape.text": 1,
+			"com.tldraw.shape.bookmark": 2,
+			"com.tldraw.shape.draw": 1,
+			"com.tldraw.shape.geo": 8,
+			"com.tldraw.shape.note": 6,
+			"com.tldraw.shape.line": 4,
+			"com.tldraw.shape.frame": 0,
+			"com.tldraw.shape.arrow": 3,
+			"com.tldraw.shape.highlight": 0,
+			"com.tldraw.shape.embed": 4,
+			"com.tldraw.shape.image": 3,
+			"com.tldraw.shape.video": 2
 		}
 	},
 	"records": [
@@ -66,9 +42,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": -2381.768165845854,
-			"y": -28344.416690816142,
-			"lastActivityTimestamp": 1713279824743,
+			"x": -1186.8227736119193,
+			"y": -9871.11259876014,
+			"lastActivityTimestamp": 1713533603868,
 			"meta": {}
 		},
 		{
@@ -99,7 +75,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 842.361083984375,
+				"w": 1684.0277099609375,
 				"h": 985.4166259765625
 			},
 			"insets": [
@@ -164,9 +140,9 @@
 			"typeName": "page"
 		},
 		{
-			"x": 4197.740303297026,
-			"y": 33958.94549940989,
-			"z": 0.1,
+			"x": 1994.3538673147184,
+			"y": 10508.145163900006,
+			"z": 0.48351250935452805,
 			"meta": {},
 			"id": "camera:page:OsQSVG-CfNRiZnP_gMXfA",
 			"typeName": "camera"

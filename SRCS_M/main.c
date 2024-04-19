@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/18 20:52:01 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:39:57 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,12 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		i;
 	int		range;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc == 1)
 		return (1);
-	i = 0;
 	check_args(argv, &stack_a);
 	if (is_sorted(stack_a))
 		return (0);
@@ -94,7 +92,7 @@ int	main(int argc, char **argv)
 		short_algo(&stack_a, &stack_b);
 	else
 	{
-		to_stack_b(&stack_a, &stack_b, range, i);
+		to_stack_b(&stack_a, &stack_b, range, 0);
 		to_stack_a(&stack_a, &stack_b);
 	}
 }

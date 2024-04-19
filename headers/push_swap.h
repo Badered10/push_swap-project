@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:40:25 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/18 20:52:53 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:57:37 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "ft_printf.h"
+# include "get_next_line.h"
 
 void	swap_a(t_list **stack_a, bool id);
 void	swap_b(t_list **stack_b, bool id);
