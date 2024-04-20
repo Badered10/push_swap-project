@@ -6,13 +6,13 @@
 #    By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 23:05:56 by baouragh          #+#    #+#              #
-#    Updated: 2024/04/19 16:31:24 by baouragh         ###   ########.fr        #
+#    Updated: 2024/04/20 17:42:31 by baouragh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
-
+CFLAGS = -Wall -Wextra -Werror
+# -fsanitize=address -g3
 MAKE = make -C
 MAKE = make -C
 LIBS = ft_printf/libftprintf.a

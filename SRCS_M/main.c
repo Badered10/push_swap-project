@@ -6,13 +6,13 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/19 15:39:57 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:25:00 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-static	void	to_stack_a(t_list **stack_a, t_list **stack_b)
+static void	to_stack_a(t_list **stack_a, t_list **stack_b)
 {
 	int	max_rank;
 
@@ -23,7 +23,7 @@ static	void	to_stack_a(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-static	void	to_stack_b(t_list **stack_a, t_list **stack_b, int range, int i)
+static void	to_stack_b(t_list **stack_a, t_list **stack_b, int range, int i)
 {
 	while (*stack_a)
 	{
@@ -50,11 +50,8 @@ static	void	to_stack_b(t_list **stack_a, t_list **stack_b, int range, int i)
 	}
 }
 
-static	void	sort_five(t_list **stack_a, t_list **stack_b)
+static void	sort_five(t_list **stack_a, t_list **stack_b, int size)
 {
-	int	size;
-
-	size = ft_lstsize(*stack_a);
 	push_by_rank(stack_a, stack_b, 0);
 	if (size == 5)
 		push_by_rank(stack_a, stack_b, 1);
@@ -64,14 +61,14 @@ static	void	sort_five(t_list **stack_a, t_list **stack_b)
 		push_a(stack_a, stack_b, 1);
 }
 
-static	void	short_algo(t_list **stack_a, t_list **stack_b)
+static void	short_algo(t_list **stack_a, t_list **stack_b, int size)
 {
-	if (ft_lstsize(*stack_a) == 2)
+	if (size == 2)
 		swap_a(stack_a, 1);
-	else if (ft_lstsize(*stack_a) == 3)
+	else if (size == 3)
 		sort_three(stack_a);
 	else
-		sort_five(stack_a, stack_b);
+		sort_five(stack_a, stack_b, size);
 }
 
 int	main(int argc, char **argv)
@@ -79,6 +76,7 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		range;
+	int		size;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -86,13 +84,15 @@ int	main(int argc, char **argv)
 		return (1);
 	check_args(argv, &stack_a);
 	if (is_sorted(stack_a))
-		return (0);
+		return (ft_lstclear(&stack_a, del), ft_lstclear(&stack_b, del), 0);
 	range = set_range(stack_a);
-	if (ft_lstsize(stack_a) <= 5)
-		short_algo(&stack_a, &stack_b);
+	size = ft_lstsize(stack_a);
+	if (size <= 5)
+		short_algo(&stack_a, &stack_b, size);
 	else
 	{
 		to_stack_b(&stack_a, &stack_b, range, 0);
 		to_stack_a(&stack_a, &stack_b);
 	}
+	return (ft_lstclear(&stack_a, del), ft_lstclear(&stack_b, del), 0);
 }

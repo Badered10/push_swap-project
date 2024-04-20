@@ -6,13 +6,13 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 01:04:47 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/19 15:42:00 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:15:56 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-static	t_list	*get_number(char *argv, t_list **list)
+static t_list	*get_number(char *argv, t_list **list)
 {
 	t_list	*node;
 	long	*x;
@@ -33,7 +33,7 @@ static	t_list	*get_number(char *argv, t_list **list)
 	return (node);
 }
 
-static	bool	check_whole(char **argv)
+static bool	check_whole(char **argv)
 {
 	int	i;
 	int	j;
@@ -69,7 +69,7 @@ static void	set_rank(t_list *list, t_list *node)
 	}
 }
 
-static	void	split_and_check(int j, int i, char **argv, t_list **list)
+static void	split_and_check(int j, int i, char **argv, t_list **list)
 {
 	t_list	*node;
 	char	**args;
@@ -77,14 +77,14 @@ static	void	split_and_check(int j, int i, char **argv, t_list **list)
 	args = ft_split(argv[i], ' ');
 	if (!args || !*args)
 		return (ft_putstr_fd("Error\n", 2), ft_lstclear(list, del),
-			free_double(args), exit(1));
+			free_double(args), system("leaks push_swap"), exit(1));
 	while (args[j])
 	{
 		node = get_number(args[j], list);
 		if (!node)
 		{
 			return (ft_putstr_fd("Error\n", 2), ft_lstclear(list, del),
-				free_double(args), exit(1));
+				free_double(args), system("leaks push_swap"), exit(1));
 		}
 		if (i == 1 && !j)
 			*list = node;
@@ -105,6 +105,7 @@ void	check_args(char **argv, t_list **list)
 	if (!check)
 	{
 		ft_putstr_fd("Error\n", 2);
+		system("leaks push_swap");
 		exit(1);
 	}
 	i = 1;

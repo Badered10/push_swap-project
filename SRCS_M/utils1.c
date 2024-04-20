@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:05:48 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/18 21:03:34 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:26:12 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	free_double(char **ptr)
 	free(ptr);
 }
 
-bool	check_duplicate(t_list *list, long number)
+bool	check_duplicate(t_list *list, int number)
 {
 	while (list)
 	{
@@ -72,7 +72,7 @@ bool	check_duplicate(t_list *list, long number)
 
 int	get_pose(t_list *stack_b, int rank)
 {
-	int		pose;
+	int	pose;
 
 	pose = 0;
 	while (stack_b)

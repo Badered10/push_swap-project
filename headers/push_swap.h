@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:40:25 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/19 15:57:37 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:26:49 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_args(char **argv, t_list **list);
 void	free_double(char **ptr);
 void	del(void *ptr);
 long	ft_atol(char *var, long res, long signe);
-bool	check_duplicate(t_list *list, long number);
+bool	check_duplicate(t_list *list, int number);
 int		set_range(t_list *stack_a);
 void	put_max_rank(t_list **stack_a, t_list **stack_b, int pose, int rank);
 int		get_max_rank(t_list *stack_b);

@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:29:17 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/19 18:21:57 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:06:08 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	is_sorted(t_list *stack_a)
 {
-	if(!stack_a)
+	if (!stack_a)
 		return (0);
 	if (!stack_a->next)
 		return (1);
@@ -73,7 +73,7 @@ void	free_double(char **ptr)
 	free(ptr);
 }
 
-bool	check_duplicate(t_list *list, long number)
+bool	check_duplicate(t_list *list, int number)
 {
 	while (list)
 	{
