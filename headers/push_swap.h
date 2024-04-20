@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:40:25 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/20 16:26:49 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/20 20:57:30 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include "ft_printf.h"
 # include "get_next_line.h"
+
+typedef struct s_all
+{
+    bool    rev;
+    int     range;
+}               t_data;
 
 void	swap_a(t_list **stack_a, bool id);
 void	swap_b(t_list **stack_b, bool id);

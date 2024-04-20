@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/20 17:25:00 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/20 20:58:23 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ static void	to_stack_a(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-static void	to_stack_b(t_list **stack_a, t_list **stack_b, int range, int i)
+static void	to_stack_b(t_list **stack_a, t_list **stack_b, int i, t_data base)
 {
 	while (*stack_a)
 	{
-		if ((*stack_a)->rank >= i && (*stack_a)->rank <= range + i)
+		if ((*stack_a)->rank >= i && (*stack_a)->rank <= base.range + i)
 		{
 			push_b(stack_b, stack_a, 1);
 			if ((*stack_b)->next && (*stack_b)->rank < (*stack_b)->next->rank)
@@ -42,7 +42,7 @@ static void	to_stack_b(t_list **stack_a, t_list **stack_b, int range, int i)
 		}
 		else
 		{
-			if (check_revers(*stack_a))
+			if (base.rev)
 				reverse_rotate_a(stack_a, 1);
 			else
 				rotate_a(stack_a, 1);
@@ -75,9 +75,9 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		range;
 	int		size;
-
+	t_data	base;
+	
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc == 1)
@@ -85,13 +85,14 @@ int	main(int argc, char **argv)
 	check_args(argv, &stack_a);
 	if (is_sorted(stack_a))
 		return (ft_lstclear(&stack_a, del), ft_lstclear(&stack_b, del), 0);
-	range = set_range(stack_a);
+	base.range = set_range(stack_a);
 	size = ft_lstsize(stack_a);
+	base.rev = check_revers(stack_a);
 	if (size <= 5)
 		short_algo(&stack_a, &stack_b, size);
 	else
 	{
-		to_stack_b(&stack_a, &stack_b, range, 0);
+		to_stack_b(&stack_a, &stack_b, 0, base);
 		to_stack_a(&stack_a, &stack_b);
 	}
 	return (ft_lstclear(&stack_a, del), ft_lstclear(&stack_b, del), 0);
