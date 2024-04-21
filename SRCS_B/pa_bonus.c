@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 00:47:12 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 17:01:05 by baouragh         ###   ########.fr       */
+/*   Created: 2024/04/12 15:56:20 by baouragh          #+#    #+#             */
+/*   Updated: 2024/04/21 18:04:38 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/push_swap_bonus.h"
 
 /*
-	sa and sb at the same time.
+	(push a): Take the first element at the top of b and put it at the top of a.
+	Do nothing if b is empty.
 */
-void	swap_swap(t_list **stack_a, t_list **stack_b, bool id)
+void	push_a(t_list **stack_a, t_list **stack_b, bool id)
 {
-	swap_a(stack_a, 0);
-	swap_b(stack_b, 0);
+	t_list	*tmp;
+
+	if (!stack_b || !*stack_b)
+		return ;
+	tmp = (*stack_b)->next;
+	ft_lstadd_front(stack_a, *stack_b);
+	*stack_b = tmp;
 	if (id)
-		ft_printf("ss\n");
+		ft_printf("pa\n");
 }

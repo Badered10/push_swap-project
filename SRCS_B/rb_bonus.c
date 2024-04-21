@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:42:33 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 17:01:09 by baouragh         ###   ########.fr       */
+/*   Created: 2024/04/13 17:45:11 by baouragh          #+#    #+#             */
+/*   Updated: 2024/04/21 18:04:38 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/push_swap_bonus.h"
 
 /*
-   rra and rrb at the same time.
+	Shift up all elements of stack a by 1.
+	The first element becomes the last one.
 */
-void	reverse_rr(t_list **stack_a, t_list **stack_b, bool id)
+void	rotate_b(t_list **stack_b, bool id)
 {
-	reverse_rotate_a(stack_a, 0);
-	reverse_rotate_b(stack_b, 0);
+	t_list	*tmp;
+
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
+		return ;
+	tmp = (*stack_b)->next;
+	ft_lstadd_back(stack_b, *stack_b);
+	*stack_b = tmp;
 	if (id)
-		ft_printf("rrr\n");
+		ft_printf("rb\n");
 }

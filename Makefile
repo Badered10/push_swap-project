@@ -6,7 +6,7 @@
 #    By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 23:05:56 by baouragh          #+#    #+#              #
-#    Updated: 2024/04/20 17:42:31 by baouragh         ###   ########.fr        #
+#    Updated: 2024/04/21 18:08:59 by baouragh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,12 @@ SRSC_M = 	SRCS_M/sa.c SRCS_M/sb.c SRCS_M/ss.c\
 			SRCS_M/rr.c SRCS_M/rra.c SRCS_M/rrb.c SRCS_M/rrr.c SRCS_M/main.c\
 			SRCS_M/utils1.c SRCS_M/utils2.c SRCS_M/utils3.c
 
-SRCS_B = 	SRCS_B/checker.c get_next_line/get_next_line_utils.c \
-			get_next_line/get_next_line.c SRCS_B/sa.c SRCS_B/sb.c SRCS_B/ss.c\
-			SRCS_B/pa.c SRCS_B/pb.c SRCS_B/ra.c SRCS_B/rb.c SRCS_B/utils.c\
-			SRCS_B/rr.c SRCS_B/rra.c SRCS_B/rrb.c SRCS_B/rrr.c SRCS_B/parsing.c 
+SRCS_B = 	SRCS_B/checker_bonus.c get_next_line/get_next_line_utils.c \
+			get_next_line/get_next_line.c SRCS_B/sa_bonus.c \
+			SRCS_B/sb_bonus.c SRCS_B/ss_bonus.c SRCS_B/pa_bonus.c \
+			SRCS_B/pb_bonus.c SRCS_B/ra_bonus.c SRCS_B/rb_bonus.c \
+			SRCS_B/utils_bonus.c SRCS_B/rr_bonus.c SRCS_B/rra_bonus.c\
+			SRCS_B/rrb_bonus.c SRCS_B/rrr_bonus.c SRCS_B/parsing_bonus.c 
 
 OBJS_M = $(SRSC_M:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)

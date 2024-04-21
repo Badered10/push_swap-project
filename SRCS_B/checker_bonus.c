@@ -6,11 +6,11 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:30:20 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/19 18:08:32 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:04:19 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/push_swap_bonus.h"
 
 bool	is_opertion(char *str, t_list **stack_a, t_list **stack_b, int len)
 {
@@ -77,8 +77,8 @@ int	main(int argc, char **argv)
 	check_args(argv, &stack_a);
 	apply_operations(&stack_a, &stack_b);
 	if (is_sorted(stack_a) && !stack_b)
-		write(1, "OK\n", 3);
+		ft_printf("OK\n");
 	else
-		write(1, "KO\n", 3);
+		ft_printf("KO\n");
 	return (0);
 }

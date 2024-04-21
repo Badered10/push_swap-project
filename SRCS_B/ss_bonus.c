@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 17:45:11 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 18:03:59 by baouragh         ###   ########.fr       */
+/*   Created: 2024/03/23 00:47:12 by baouragh          #+#    #+#             */
+/*   Updated: 2024/04/21 18:04:38 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/push_swap_bonus.h"
 
 /*
-	Shift up all elements of stack a by 1.
-	The first element becomes the last one.
+	sa and sb at the same time.
 */
-void	rotate_b(t_list **stack_b, bool id)
+void	swap_swap(t_list **stack_a, t_list **stack_b, bool id)
 {
-	t_list	*tmp;
-
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
-		return ;
-	tmp = (*stack_b)->next;
-	ft_lstadd_back(stack_b, *stack_b);
-	*stack_b = tmp;
+	swap_a(stack_a, 0);
+	swap_b(stack_b, 0);
 	if (id)
-		ft_printf("rb\n");
+		ft_printf("ss\n");
 }

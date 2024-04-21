@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:39:42 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/15 21:17:47 by baouragh         ###   ########.fr       */
+/*   Created: 2024/04/13 18:26:20 by baouragh          #+#    #+#             */
+/*   Updated: 2024/04/21 18:04:38 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/push_swap_bonus.h"
 
 static t_list	*before_last(t_list *list)
 {
@@ -29,21 +29,21 @@ static t_list	*before_last(t_list *list)
 }
 
 /*
-   (reverse rotate b): Shift down all elements of stack b by 1.
+	rra (reverse rotate a): Shift down all elements of stack a by 1.
 	The last element becomes the first one.
 */
-void	reverse_rotate_b(t_list **stack_b, bool id)
+void	reverse_rotate_a(t_list **stack_a, bool id)
 {
 	t_list	*before;
 	t_list	*last;
 
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
 		return ;
-	last = ft_lstlast(*stack_b);
-	before = before_last(*stack_b);
-	last->next = *stack_b;
+	last = ft_lstlast(*stack_a);
+	before = before_last(*stack_a);
+	last->next = *stack_a;
 	before->next = NULL;
-	*stack_b = last;
+	*stack_a = last;
 	if (id)
-		ft_printf("rrb\n");
+		ft_printf("rra\n");
 }
