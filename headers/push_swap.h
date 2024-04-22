@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:40:25 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/21 17:56:40 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:08:49 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 typedef struct s_all
 {
-    bool    rev;
-    int     range;
-}               t_data;
+	bool	rev;
+	int		range;
+}				t_data;
 
 void	swap_a(t_list **stack_a, bool id);
 void	swap_b(t_list **stack_b, bool id);

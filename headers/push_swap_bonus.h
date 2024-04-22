@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/22 15:09:09 by baouragh          #+#    #+#             */
+/*   Updated: 2024/04/22 15:09:30 by baouragh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-#include "ft_printf.h"
-#include "get_next_line.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 void	swap_a(t_list **stack_a, bool id);
 void	swap_b(t_list **stack_b, bool id);

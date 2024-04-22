@@ -6,7 +6,7 @@
 /*   By: baouragh <baouragh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 00:14:23 by baouragh          #+#    #+#             */
-/*   Updated: 2024/04/21 18:22:12 by baouragh         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:09:51 by baouragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 	int		size;
 	t_data	base;
-	
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc == 1)
